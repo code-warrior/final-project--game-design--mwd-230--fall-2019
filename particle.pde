@@ -10,9 +10,9 @@ class Particle {
   Ray[] rays;
   Particle() {
     this.pos = new PVector(width / 2, height / 2);
-    this.rays = new Ray[360];
+    this.rays = new Ray[180];
     for (int a = 0; a < this.rays.length; a += 1) {
-      this.rays[a] = new Ray(this.pos, radians(a));
+      this.rays[a] = new Ray(this.pos, radians(2*a));
     }
   }
 

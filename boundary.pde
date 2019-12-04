@@ -7,13 +7,16 @@
 
 class Boundary {
   PVector a, b;
-  Boundary(float x1, float y1, float x2, float  y2) {
+  float x, y, diameter;
+  color c;
+  Boundary(float x1, float y1, float x2, float  y2, color c) {
     this.a = new PVector(x1, y1);
     this.b = new PVector(x2, y2);
+    this.c = c;
   }
 
   void show() {
-    stroke(255);
+    stroke(c);
     line(this.a.x, this.a.y, this.b.x, this.b.y);
   }
 }
