@@ -3,5 +3,7 @@
 !.gitignore
 !README.md
 !sketch/
+!sketch/settings/
 !sketch/img/
+!sketch/levels/
 !THE-ONE-SHEET.md

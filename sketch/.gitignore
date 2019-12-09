@@ -1,5 +1,7 @@
 *
-
+!img/
+!levels/
+!settings/
 !.gitignore
 !README.md
 !*.pde
