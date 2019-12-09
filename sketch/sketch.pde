@@ -80,6 +80,6 @@ void keyPressed() {
       // 37  38 39    40
     }
   }
-  lastKeyPress = keyCode;
+  lastKeyPress = keyCode == 37 || keyCode == 38 || keyCode == 39 || keyCode == 40 ? keyCode : lastKeyPress;
   //System.out.println("No way jose " + key + " " + keyCode + " " + starting_x + " " + starting_y + " Has collided: " + hasCollided(currentPoints, TOTAL_WIDTH, TOTAL_HEIGHT));
 }
