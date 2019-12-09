@@ -46,9 +46,11 @@ class Particle {
 
   void show() {
     fill(255);
+    ellipseMode(CENTER);
     ellipse(this.pos.x, this.pos.y, PARTICLE_HEIGHT_WIDTH, PARTICLE_HEIGHT_WIDTH);
     for (Ray ray : this.rays) {
       ray.show();
     }
   }
+  
 }

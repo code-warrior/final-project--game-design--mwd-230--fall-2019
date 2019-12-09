@@ -11,11 +11,13 @@ Particle particle;
 float particleXPos, particleYPos;
 float MOVEMENT_SPEED = 10;
 final static int PARTICLE_HEIGHT_WIDTH = 50;
+int lastKeyPress = keyCode;
 
 void setup() {
   size(1920, 1080);
   particleXPos = width/2;
   particleYPos = height/2;
+  //Boundaries are just lines from x1, y1 to x2, y2 with color at the end
   walls = new Boundary[5+4];
   for (int i = 0; i < walls.length; i++) {
     float x1 = random(width);
@@ -46,24 +48,38 @@ void draw() {
   particle.look(walls);
 }
 
+boolean hasCollided() {
+  boolean result = false;
+  for(Boundary wall : walls) {
+    result = lineCircle(wall.a.x, wall.a.y, wall.b.x, wall.b.y, particle.pos.x, particle.pos.y, PARTICLE_HEIGHT_WIDTH/2);
+    if(result){
+      return result;
+    }
+  }
+  return result;
+}
+
 void keyPressed() {
-  if(keyCode == 38 && particleYPos > 0) {
-    particleYPos -= MOVEMENT_SPEED;
+  if(!hasCollided() || keyCode != lastKeyPress) {
+    if(keyCode == 38 && particleYPos > 0) {
+      particleYPos -= MOVEMENT_SPEED;
+    }
+    else if(keyCode == 40 && particleYPos < height - PARTICLE_HEIGHT_WIDTH) {
+      particleYPos += MOVEMENT_SPEED;
+    }
+    else if(keyCode == 37 && particleXPos > 0) {
+      particleXPos -= MOVEMENT_SPEED;
+    }
+    else if(keyCode == 39 && particleXPos < width - PARTICLE_HEIGHT_WIDTH) {
+      particleXPos += MOVEMENT_SPEED;
+    }
+    //Debugging
+    else {
+      
+      //left up right down
+      // 37  38 39    40
+    }
   }
-  else if(keyCode == 40 && particleYPos < height - PARTICLE_HEIGHT_WIDTH) {
-    particleYPos += MOVEMENT_SPEED;
-  }
-  else if(keyCode == 37 && particleXPos > 0) {
-    particleXPos -= MOVEMENT_SPEED;
-  }
-  else if(keyCode == 39 && particleXPos < width - PARTICLE_HEIGHT_WIDTH) {
-    particleXPos += MOVEMENT_SPEED;
-  }
-  //Debugging
-  else {
-    
-    //left up right down
-    // 37  38 39    40
-  }
+  lastKeyPress = keyCode;
   //System.out.println("No way jose " + key + " " + keyCode + " " + starting_x + " " + starting_y + " Has collided: " + hasCollided(currentPoints, TOTAL_WIDTH, TOTAL_HEIGHT));
 }
