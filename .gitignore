@@ -2,4 +2,6 @@
 
 !.gitignore
 !README.md
-!*.pde
+!sketch/
+!sketch/img/
+!THE-ONE-SHEET.md
