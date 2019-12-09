@@ -6,7 +6,8 @@ This book's entire contents, including the code examples and this text,
     is released under a Creative Commons Attribution, Non-Commercial, Share-Alike license. This means:
 
 You're welcome to use this book and the examples to make great stuff, but please cite this book 
-    somewhere in your project or its documentation. (The book is found here: http://www.jeffreythompson.org/collision-detection/)
+    somewhere in your project or its documentation. 
+    (The book is found here: http://www.jeffreythompson.org/collision-detection/)
 
 You can only use the book's text and/or code vertbatim for non-commercial projects. That means 
     you can remix or make your own version of the book, and you can fork and create 
