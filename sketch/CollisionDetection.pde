@@ -23,7 +23,7 @@ But you're free to use the ideas and code from this book inside your projects,
     you're welcome to build a super cool game that relies on the code you've seen here, 
     even if you're going to sell it!
 
-THESE METHODS HAVE NOT BEEN MODIFIED. MODIFIED COMMENTS HAVE MY NAME
+THESE METHODS HAVE NOT BEEN MODIFIED. MODIFIED COMMENTS HAVE 'James' at the start
 */
 
 //James - Takes in a line's x1, y1, x2, y2 a cricles x,y and radius
@@ -53,9 +53,9 @@ boolean lineCircle(float x1, float y1, float x2, float y2, float cx, float cy, f
   if (!onSegment) return false;
 
   // optionally, draw a circle at the closest point on the line
-  //fill(255,0,0);
-  //noStroke();
-  //ellipse(closestX, closestY, 20, 20);
+  // James - fill(255,0,0);
+  // James - noStroke();
+  // James - ellipse(closestX, closestY, 20, 20);
 
   // get distance to closest point
   distX = closestX - cx;
