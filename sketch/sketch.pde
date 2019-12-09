@@ -18,15 +18,16 @@ void setup() {
   particleXPos = width/2;
   particleYPos = height/2;
   //Boundaries are just lines from x1, y1 to x2, y2 with color at the end
-  walls = new Boundary[5+4];
-  for (int i = 0; i < walls.length; i++) {
-    float x1 = random(width);
-    float x2 = random(width);
-    float y1 = random(height);
-    float y2 = random(height);
-    walls[i] = new Boundary(x1, y1, x2, y2, 0);
-  }
-  
+  walls = new Boundary[2+4];
+  walls[0] = new Boundary(0, height/3, width, height/3, 0);
+  walls[1] = new Boundary(0, 2*(height/3), width, 2*(height/3), 0);
+  walls[walls.length-4] = (new Boundary(particleXPos-99, particleYPos-99, particleXPos+101, particleYPos-99, 0));
+  //top left corner to bottom left
+  walls[walls.length-3] = (new Boundary(particleXPos-99, particleYPos-99, particleXPos-99, particleYPos+101, 0));
+  //top right corner to bottom right corner
+  walls[walls.length-2] = (new Boundary(particleXPos+101, particleYPos-99, particleXPos+101, particleYPos+101, 0));
+  //bottom left corner to bottom right corner
+  walls[walls.length-1] = (new Boundary(particleXPos+101, particleYPos+101, particleXPos-99, particleYPos+101, 0));
   particle = new Particle();
 }
 
