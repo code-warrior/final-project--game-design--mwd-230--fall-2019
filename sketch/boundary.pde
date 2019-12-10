@@ -1,4 +1,5 @@
-// Daniel Shiffman
+// Authored by Daniel Shiffman
+// Modifications by James Pinckney
 // https://thecodingtrain.com/CodingChallenges/145-2d-ray-casting.html
 // https://youtu.be/TOEi6T2mtHo
 

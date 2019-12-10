@@ -1,12 +1,6 @@
-// Daniel Shiffman
-// https://thecodingtrain.com/CodingChallenges/145-2d-ray-casting.html
-// https://youtu.be/TOEi6T2mtHo
-
-// 2D Ray Casting
-// https://editor.p5js.org/codingtrain/sketches/Nqsq3DFv-
+// Authored by James Pinckney
 
 Boundary[] walls;
-//Ray ray;
 Particle particle;
 float particleXPos, particleYPos;
 float MOVEMENT_SPEED = 10;
