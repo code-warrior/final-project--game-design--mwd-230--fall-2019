@@ -6,17 +6,17 @@
 // https://editor.p5js.org/codingtrain/sketches/Nqsq3DFv-
 
 class Boundary {
-  PVector a, b;
-  float x, y, diameter;
+  //
+  PVector wallVector1, wallVector2;
   color c;
   Boundary(float x1, float y1, float x2, float  y2, color c) {
-    this.a = new PVector(x1, y1);
-    this.b = new PVector(x2, y2);
+    this.wallVector1 = new PVector(x1, y1);
+    this.wallVector2 = new PVector(x2, y2);
     this.c = c;
   }
 
   void show() {
     stroke(c);
-    line(this.a.x, this.a.y, this.b.x, this.b.y);
+    line(this.wallVector1.x, this.wallVector1.y, this.wallVector2.x, this.wallVector2.y);
   }
 }

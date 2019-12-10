@@ -52,7 +52,8 @@ void draw() {
 boolean hasCollided() {
   boolean result = false;
   for(Boundary wall : walls) {
-    result = lineCircle(wall.a.x, wall.a.y, wall.b.x, wall.b.y, particle.pos.x, particle.pos.y, PARTICLE_HEIGHT_WIDTH/2);
+    //Use library in CollisionDetection.pde
+    result = lineCircle(wall.wallVector1.x, wall.wallVector1.y, wall.wallVector2.x, wall.wallVector2.y, particle.pos.x, particle.pos.y, PARTICLE_HEIGHT_WIDTH/2);
     if(result){
       return result;
     }

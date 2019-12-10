@@ -27,10 +27,10 @@ class Ray {
   }
 
   PVector cast(Boundary wall) {
-    float x1 = wall.a.x;
-    float y1 = wall.a.y;
-    float x2 = wall.b.x;
-    float y2 = wall.b.y;
+    float x1 = wall.wallVector1.x;
+    float y1 = wall.wallVector1.y;
+    float x2 = wall.wallVector2.x;
+    float y2 = wall.wallVector2.y;
 
     float x3 = this.pos.x;
     float y3 = this.pos.y;
