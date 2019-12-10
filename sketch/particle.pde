@@ -11,8 +11,8 @@ class Particle {
   Particle() {
     this.pos = new PVector(width / 2, height / 2);
     this.rays = new Ray[180];
-    for (int a = 0; a < this.rays.length; a += 1) {
-      this.rays[a] = new Ray(this.pos, radians(2*a));
+    for (int angle = 0; angle < this.rays.length; angle += 1) {
+      this.rays[angle] = new Ray(this.pos, radians(2*angle));
     }
   }
 
@@ -26,12 +26,12 @@ class Particle {
       PVector closest = null;
       float record = 500000000;
       for (Boundary wall : walls) {
-        PVector pt = ray.cast(wall);
-        if (pt != null) {
-          float d = PVector.dist(this.pos, pt);
-          if (d < record) {
-            record = d;
-            closest = pt;
+        PVector intersectionPoint = ray.cast(wall);
+        if (intersectionPoint != null) {
+          float distance = PVector.dist(this.pos, intersectionPoint);
+          if (distance < record) {
+            record = distance;
+            closest = intersectionPoint;
           }
         }
       }
