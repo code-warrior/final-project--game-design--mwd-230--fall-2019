@@ -1,7 +1,7 @@
 final static String LEVEL_PATH = "levels/";
 JSONObject level;
 
-StringList loadLevels() {
+StringList listLevels() {
   String sketch_path = sketchPath();
   StringList filenames = listFileNames(sketch_path + "/" + LEVEL_PATH);
   return filenames;
