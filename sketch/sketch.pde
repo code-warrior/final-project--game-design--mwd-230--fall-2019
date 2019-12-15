@@ -56,6 +56,7 @@ void draw() {
   } catch (LevelFormatException e) {
     System.out.println(e);
   }
+  System.out.println(walls.size());
   particle.update(particleXPos, particleYPos);
   particle.show();
   particle.look(walls);

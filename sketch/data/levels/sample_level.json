@@ -1,13 +1,11 @@
 {
     "name": "Sample Level",
-    "startingx": "125",
-    "startingy": "height",
+    "startingx": "0",
+    "startingy": "540",
+    "finishx": "width",
+    "finishy": "540",
     "walls": {
-        "LeftBorder": ["0","0","0","height"],
-        "RightBorder1": ["width", "0","width", "100"],
-        "FinishLine": ["width", "100", "width", "150"],
-        "RightBorder2": ["width", "150", "width", "height"],
-        "BottomBorder1": ["0","height", "100", "height"],
-        "BottomBorder2": ["150", "height", "width", "height"]
+        "top": ["0","500","width","500"],
+        "bottom": ["0","580","width","580"]
     }
 }
