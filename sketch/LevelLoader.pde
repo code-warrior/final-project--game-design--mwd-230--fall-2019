@@ -1,4 +1,4 @@
-final static String LEVEL_PATH = "levels/";
+final static String LEVEL_PATH = "data/levels/";
 
 StringList listLevels() {
   String sketch_path = sketchPath();

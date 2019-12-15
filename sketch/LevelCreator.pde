@@ -1,10 +1,10 @@
-void drawLevel(JSONObject levelData)
+void setInitialPosition(JSONObject levelData) throws LevelFormatException
 {
-    String temp1, temp2, temp3, temp4;
+    String temp1, temp2;
     try {
         temp1 = levelData.getString("startingx");
         temp2 = levelData.getString("startingy");
-    } catch(java.lang.RuntimeException e){
+    } catch(RuntimeException e){
         throw new LevelFormatException("startingx and startingy not found in your level file!");
     }
     try {
@@ -32,5 +32,18 @@ void drawLevel(JSONObject levelData)
         else {
             throw new LevelFormatException("Invalid value for startingy!");
         }
+    }
+}
+
+void drawLevel(JSONObject levelData) throws LevelFormatException
+{
+    Iterator wallsKeys;
+    try {
+        wallsKeys = levelData.getJSONObject("walls").keyIterator();
+    } catch (RuntimeException e) {
+        throw new LevelFormatException("Could not find walls!");
+    }
+    while(wallsKeys.hasNext()) {
+        return;
     }
 }

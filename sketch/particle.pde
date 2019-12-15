@@ -21,7 +21,7 @@ class Particle {
     this.pos.set(x, y);
   }
 
-  void look(Boundary[] walls) {
+  void look(ArrayList<Boundary> walls) {
     for (int i = 0; i < this.rays.length; i++) {
       Ray ray = this.rays[i];
       PVector closest = null;

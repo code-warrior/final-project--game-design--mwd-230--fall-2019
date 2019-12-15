@@ -1,50 +1,61 @@
 // Authored by James Pinckney
+import java.util.Iterator;
 
-Boundary[] walls;
+ArrayList<Boundary> walls;
 Particle particle;
 float particleXPos, particleYPos;
 float MOVEMENT_SPEED = 10;
 final static int PARTICLE_HEIGHT_WIDTH = 50;
 int lastKeyPress = keyCode;
 int levelNum = 0;
+StringList levelNames;
 
 void setup() {
   size(1920, 1080);
-  StringList levelNames = listLevels();
-  drawLevel(loadJSONObject(levelNames.get(levelNum)));
-
-
+  levelNames = listLevels();
+  System.out.println("levels/" + levelNames.get(levelNum));
+  try {
+    setInitialPosition(loadJSONObject("levels/" + levelNames.get(levelNum)));
+  } catch (LevelFormatException e) {
+    System.out.println(e);
+  }
+  walls = new ArrayList();
+  //Top left corner to top right
+  walls.add(new Boundary(particleXPos-99, particleYPos-99, particleXPos+101, particleYPos-99, 0));
+  //top left corner to bottom left
+  walls.add(new Boundary(particleXPos-99, particleYPos-99, particleXPos-99, particleYPos+101, 0));
+  //top right corner to bottom right corner
+  walls.add(new Boundary(particleXPos+101, particleYPos-99, particleXPos+101, particleYPos+101, 0));
+  //bottom left corner to bottom right corner
+  walls.add(new Boundary(particleXPos+101, particleYPos+101, particleXPos-99, particleYPos+101, 0));
   //Start Player in middle
   //particleXPos = width/2;
   //particleYPos = height/2;
   //Boundaries are just lines from x1, y1 to x2, y2 with color at the end
-  walls = new Boundary[4];
   //walls[0] = new Boundary(0, height/3, width, height/3, 0);
   //walls[1] = new Boundary(0, 2*(height/3), width, 2*(height/3), 0);
-  walls[walls.length-4] = (new Boundary(particleXPos-99, particleYPos-99, particleXPos+101, particleYPos-99, 0));
-  //top left corner to bottom left
-  walls[walls.length-3] = (new Boundary(particleXPos-99, particleYPos-99, particleXPos-99, particleYPos+101, 0));
-  //top right corner to bottom right corner
-  walls[walls.length-2] = (new Boundary(particleXPos+101, particleYPos-99, particleXPos+101, particleYPos+101, 0));
-  //bottom left corner to bottom right corner
-  walls[walls.length-1] = (new Boundary(particleXPos+101, particleYPos+101, particleXPos-99, particleYPos+101, 0));
   particle = new Particle();
 }
 
 void draw() {
   background(0);
-  drawLevel(loadJSONObject(levelNames.get(levelNum)));
   for (Boundary wall : walls) {
     wall.show();
   }
+  walls = new ArrayList();
   //Top left corner to top right
-  walls[walls.length-4] = (new Boundary(particleXPos-99, particleYPos-99, particleXPos+101, particleYPos-99, 0));
+  walls.add(new Boundary(particleXPos-99, particleYPos-99, particleXPos+101, particleYPos-99, 0));
   //top left corner to bottom left
-  walls[walls.length-3] = (new Boundary(particleXPos-99, particleYPos-99, particleXPos-99, particleYPos+101, 0));
+  walls.add(new Boundary(particleXPos-99, particleYPos-99, particleXPos-99, particleYPos+101, 0));
   //top right corner to bottom right corner
-  walls[walls.length-2] = (new Boundary(particleXPos+101, particleYPos-99, particleXPos+101, particleYPos+101, 0));
+  walls.add(new Boundary(particleXPos+101, particleYPos-99, particleXPos+101, particleYPos+101, 0));
   //bottom left corner to bottom right corner
-  walls[walls.length-1] = (new Boundary(particleXPos+101, particleYPos+101, particleXPos-99, particleYPos+101, 0));
+  walls.add(new Boundary(particleXPos+101, particleYPos+101, particleXPos-99, particleYPos+101, 0));
+  try {
+    drawLevel(loadJSONObject("levels/" + levelNames.get(levelNum)));
+  } catch (LevelFormatException e) {
+    System.out.println(e);
+  }
   particle.update(particleXPos, particleYPos);
   particle.show();
   particle.look(walls);
