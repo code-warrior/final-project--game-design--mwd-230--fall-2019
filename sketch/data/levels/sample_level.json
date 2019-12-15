@@ -1,0 +1,13 @@
+{
+    "name": "Sample Level",
+    "startingx": "125",
+    "startingy": "height",
+    "walls": {
+        "LeftBorder": ["0","0","0","height"],
+        "RightBorder1": ["width", "0","width", "100"],
+        "FinishLine": ["width", "100", "width", "150"],
+        "RightBorder2": ["width", "150", "width", "height"],
+        "BottomBorder1": ["0","height", "100", "height"],
+        "BottomBorder2": ["150", "height", "width", "height"]
+    }
+}

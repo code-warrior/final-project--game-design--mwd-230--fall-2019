@@ -6,15 +6,17 @@ float particleXPos, particleYPos;
 float MOVEMENT_SPEED = 10;
 final static int PARTICLE_HEIGHT_WIDTH = 50;
 int lastKeyPress = keyCode;
+int levelNum = 0;
 
 void setup() {
   size(1920, 1080);
-  StringList levelNames = loadLevels();
+  StringList levelNames = listLevels();
+  drawLevel(loadJSONObject(levelNames.get(levelNum)));
 
 
   //Start Player in middle
-  particleXPos = width/2;
-  particleYPos = height/2;
+  //particleXPos = width/2;
+  //particleYPos = height/2;
   //Boundaries are just lines from x1, y1 to x2, y2 with color at the end
   walls = new Boundary[4];
   //walls[0] = new Boundary(0, height/3, width, height/3, 0);
@@ -31,6 +33,7 @@ void setup() {
 
 void draw() {
   background(0);
+  drawLevel(loadJSONObject(levelNames.get(levelNum)));
   for (Boundary wall : walls) {
     wall.show();
   }

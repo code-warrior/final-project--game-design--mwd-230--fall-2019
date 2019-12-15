@@ -1,5 +1,4 @@
 final static String LEVEL_PATH = "levels/";
-JSONObject level;
 
 StringList listLevels() {
   String sketch_path = sketchPath();
