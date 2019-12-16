@@ -13,17 +13,24 @@ Riddle Trivia is designed to truly challenge its players. It’s a simple game t
 
 ## Three Levels
 
-### Level 1 (Easy): People -
+### Level 1 (Easy): People - 
+
+Level 1 consists of the easiest set of multiple choice questions regarding people. These questions use names that are easy to follow yet still challenge its players. Level 1 also consists of a pink background allowing users to decipher the difference between each level.
 
 ### Level 2 (Medium): Animals -
 
+Level 2 is set to a medium difficulty for players. This level is also set in a multiple choice style but requires to user to have prior knowledge about animals. Level 2 is displayed with a shade of orange as the background. 
+
 ### Level 3 (Hard): Numerical -  
+
+Level 3 is the hardest level of Riddle Trivia. This level is all about numbers. This level is considered the hardest because many individuals may struggle with mathematics and numerical questions. Level 3 is displayed with a purple background and is also displayed in a multiple choice style question.
+
 
 ## How to play
 
-* Select a level
-* Think hard about the question
-* Choose an answer wisely by using letter keys on the keyboard
+* Select a level 1 through 3.
+* Think hard about the question presented.
+* Choose an answer wisely by using letter keys on the keyboard. 
 * If question is correct:
 	* Move onto the next one
 * If question is incorrect:
