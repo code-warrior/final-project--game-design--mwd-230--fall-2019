@@ -25,6 +25,9 @@ StringList listFileNames(String dir) {
 }
 
 void setupLevelSelect(StringList fileNames) {
+
+  ControlFont cf1 = new ControlFont(createFont("Arial",32,true),32);
+  
   StringList levelNameJSON = new StringList();
   for(int i = 0; i < fileNames.size(); i++){
     levelNameJSON.append(loadJSONObject("levels/" + fileNames.get(i)).getString("name"));
@@ -39,7 +42,8 @@ void setupLevelSelect(StringList fileNames) {
           .setItemHeight(100)
           .setColorBackground(color(60))
           .setColorActive(color(255, 128))
-          .addItems(levelNameJSON.array());
+          .addItems(levelNameJSON.array())
+          .setFont(cf1);
   
   cp5.addButton("Play")
      .setValue(0)
