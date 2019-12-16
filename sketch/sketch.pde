@@ -20,11 +20,6 @@ void setup() {
 
   levelNames = listLevels();
   //System.out.println("levels/" + levelNames.get(levelNum));
-  try {
-    setInitialPosition(loadJSONObject("levels/" + levelNames.get(levelNum)));
-  } catch (LevelFormatException e) {
-    System.out.println(e);
-  }
   walls = new ArrayList();
   //Top left corner to top right
   walls.add(new Boundary(particleXPos-199, particleYPos-199, particleXPos+201, particleYPos-199, 0));
@@ -41,7 +36,11 @@ void setup() {
   //walls[0] = new Boundary(0, height/3, width, height/3, 0);
   //walls[1] = new Boundary(0, 2*(height/3), width, 2*(height/3), 0);
   particle = new Particle();
-  setupLevelSelect(levelNames);
+  try {
+    setupLevelSelect(levelNames);
+  } catch (LevelFormatException e) {
+    System.out.println(e);
+  }
 }
 
 void draw() {

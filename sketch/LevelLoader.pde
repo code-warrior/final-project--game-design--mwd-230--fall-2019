@@ -24,7 +24,7 @@ StringList listFileNames(String dir) {
   }
 }
 
-void setupLevelSelect(StringList fileNames) {
+void setupLevelSelect(StringList fileNames) throws LevelFormatException{
 
   ControlFont cf1 = new ControlFont(createFont("Arial",32,true),32);
   
@@ -54,9 +54,15 @@ void setupLevelSelect(StringList fileNames) {
         if (event.getAction() == ControlP5.ACTION_RELEASED) {
           System.out.println("Play Control! About to play with level " + levelNum);
           isUIVisible = !isUIVisible;
+          try{
+            setInitialPosition(loadJSONObject("levels/" + levelNames.get(levelNum)));
+          } catch (LevelFormatException e) {
+            System.out.println(e);
+          }
         }
       }
-    });
+    })
+    .setFont(cf1);
 }
 
 void Level(int n) {
