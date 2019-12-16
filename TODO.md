@@ -6,6 +6,6 @@
 ~~Make walls and start location to be loaded in via a file – this will allow me to make “Levels” easier - `3-4 hours`~~  
 Add required “fluff” (UI, Level Select, Pause, instant gratification…) - `12-24 hours`  
  - ~~On game load, a UI asset should be displayed to the player that allows him/her/them to choose which level to play.~~
- - It should be clear to the player, via a UI asset, what level they’re on.
- - A scoring mechanism must be implemented so as to indicate which entity is winning/losing.
+ - ~~It should be clear to the player, via a UI asset, what level they’re on.~~
+ - ~~A scoring mechanism must be implemented so as to indicate which entity is winning/losing.~~
  - At the completion of every level, the player should be returned to the initial game load state.
