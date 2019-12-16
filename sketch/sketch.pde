@@ -13,6 +13,7 @@ int lastKeyPress = keyCode;
 int levelNum = 0;
 StringList levelNames;
 boolean isUIVisible = true;
+String levelNameNice;
 
 void setup() {
   size(1920, 1080);
@@ -48,6 +49,9 @@ void draw() {
     cp5.remove("Level");
     cp5.remove("Play");
     background(0);
+    textSize(32);
+    fill(255);
+    text(levelNameNice, 0, height-10);
     for (Boundary wall : walls) {
       wall.show();
     }

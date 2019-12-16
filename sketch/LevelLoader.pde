@@ -1,4 +1,5 @@
 final static String LEVEL_PATH = "data/levels/";
+StringList levelNameJSON;
 
 StringList listLevels() {
   String sketch_path = sketchPath();
@@ -28,7 +29,7 @@ void setupLevelSelect(StringList fileNames) throws LevelFormatException{
 
   ControlFont cf1 = new ControlFont(createFont("Arial",32,true),32);
   
-  StringList levelNameJSON = new StringList();
+  levelNameJSON = new StringList();
   for(int i = 0; i < fileNames.size(); i++){
     levelNameJSON.append(loadJSONObject("levels/" + fileNames.get(i)).getString("name"));
   }
@@ -53,6 +54,7 @@ void setupLevelSelect(StringList fileNames) throws LevelFormatException{
       public void controlEvent(CallbackEvent event) {
         if (event.getAction() == ControlP5.ACTION_RELEASED) {
           System.out.println("Play Control! About to play with level " + levelNum);
+          levelNameNice = levelNameJSON.get(levelNum);
           isUIVisible = !isUIVisible;
           try{
             setInitialPosition(loadJSONObject("levels/" + levelNames.get(levelNum)));
