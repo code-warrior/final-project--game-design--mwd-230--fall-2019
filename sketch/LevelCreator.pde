@@ -1,14 +1,18 @@
 void setInitialPosition(JSONObject levelData) throws LevelFormatException
 {
-    String temp1, temp2;
+    String temp1, temp2, temp3, temp4;
     try {
         temp1 = levelData.getString("startingx");
         temp2 = levelData.getString("startingy");
+        temp3 = levelData.getString("finishx");
+        temp4 = levelData.getString("finishy");
     } catch(RuntimeException e){
-        throw new LevelFormatException("startingx and startingy not found in your level file!");
+        throw new LevelFormatException("startingx, startingy, finishx, finishy not found in your level file!");
     }
     particleXPos = parseIntHelper(temp1);
     particleYPos = parseIntHelper(temp2);
+    finishX = parseIntHelper(temp3);
+    finishY = parseIntHelper(temp4);
 }
 
 void drawLevel(JSONObject levelData) throws LevelFormatException

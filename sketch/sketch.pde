@@ -1,19 +1,25 @@
 // Authored by James Pinckney
 import java.util.Iterator;
+import controlP5.*;
 
+ControlP5 cp5;
 ArrayList<Boundary> walls;
 Particle particle;
 float particleXPos, particleYPos;
+int finishX, finishY;
 float MOVEMENT_SPEED = 10;
 final static int PARTICLE_HEIGHT_WIDTH = 50;
 int lastKeyPress = keyCode;
 int levelNum = 0;
 StringList levelNames;
+boolean isUIVisible = true;
 
 void setup() {
   size(1920, 1080);
+  cp5 = new ControlP5(this);
+
   levelNames = listLevels();
-  System.out.println("levels/" + levelNames.get(levelNum));
+  //System.out.println("levels/" + levelNames.get(levelNum));
   try {
     setInitialPosition(loadJSONObject("levels/" + levelNames.get(levelNum)));
   } catch (LevelFormatException e) {
@@ -21,13 +27,13 @@ void setup() {
   }
   walls = new ArrayList();
   //Top left corner to top right
-  walls.add(new Boundary(particleXPos-99, particleYPos-99, particleXPos+101, particleYPos-99, 0));
+  walls.add(new Boundary(particleXPos-199, particleYPos-199, particleXPos+201, particleYPos-199, 0));
   //top left corner to bottom left
-  walls.add(new Boundary(particleXPos-99, particleYPos-99, particleXPos-99, particleYPos+101, 0));
+  walls.add(new Boundary(particleXPos-199, particleYPos-199, particleXPos-199, particleYPos+201, 0));
   //top right corner to bottom right corner
-  walls.add(new Boundary(particleXPos+101, particleYPos-99, particleXPos+101, particleYPos+101, 0));
+  walls.add(new Boundary(particleXPos+201, particleYPos-199, particleXPos+201, particleYPos+201, 0));
   //bottom left corner to bottom right corner
-  walls.add(new Boundary(particleXPos+101, particleYPos+101, particleXPos-99, particleYPos+101, 0));
+  walls.add(new Boundary(particleXPos+201, particleYPos+201, particleXPos-199, particleYPos+201, 0));
   //Start Player in middle
   //particleXPos = width/2;
   //particleYPos = height/2;
@@ -35,31 +41,42 @@ void setup() {
   //walls[0] = new Boundary(0, height/3, width, height/3, 0);
   //walls[1] = new Boundary(0, 2*(height/3), width, 2*(height/3), 0);
   particle = new Particle();
+  setupLevelSelect(levelNames);
 }
 
 void draw() {
-  background(0);
-  for (Boundary wall : walls) {
-    wall.show();
+  if(!isUIVisible){
+    cp5.remove("Level");
+    cp5.remove("Play");
+    background(0);
+    for (Boundary wall : walls) {
+      wall.show();
+    }
+    walls = new ArrayList();
+    //Top left corner to top right
+    walls.add(new Boundary(particleXPos-199, particleYPos-199, particleXPos+201, particleYPos-199, 0));
+    //top left corner to bottom left
+    walls.add(new Boundary(particleXPos-199, particleYPos-199, particleXPos-199, particleYPos+201, 0));
+    //top right corner to bottom right corner
+    walls.add(new Boundary(particleXPos+201, particleYPos-199, particleXPos+201, particleYPos+201, 0));
+    //bottom left corner to bottom right corner
+    walls.add(new Boundary(particleXPos+201, particleYPos+201, particleXPos-199, particleYPos+201, 0));
+    try {
+      drawLevel(loadJSONObject("levels/" + levelNames.get(levelNum)));
+    } catch (LevelFormatException e) {
+      System.out.println(e);
+    }
+    //System.out.println(walls.size());
+    particle.update(particleXPos, particleYPos);
+    particle.show();
+    particle.look(walls);
   }
-  walls = new ArrayList();
-  //Top left corner to top right
-  walls.add(new Boundary(particleXPos-99, particleYPos-99, particleXPos+101, particleYPos-99, 0));
-  //top left corner to bottom left
-  walls.add(new Boundary(particleXPos-99, particleYPos-99, particleXPos-99, particleYPos+101, 0));
-  //top right corner to bottom right corner
-  walls.add(new Boundary(particleXPos+101, particleYPos-99, particleXPos+101, particleYPos+101, 0));
-  //bottom left corner to bottom right corner
-  walls.add(new Boundary(particleXPos+101, particleYPos+101, particleXPos-99, particleYPos+101, 0));
-  try {
-    drawLevel(loadJSONObject("levels/" + levelNames.get(levelNum)));
-  } catch (LevelFormatException e) {
-    System.out.println(e);
+  else {
+    background(0);
+    textSize(128);
+    fill(255);
+    text("Into The Darkness", width/2-128*4.4, 150);
   }
-  System.out.println(walls.size());
-  particle.update(particleXPos, particleYPos);
-  particle.show();
-  particle.look(walls);
 }
 
 boolean hasCollided() {
