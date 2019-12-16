@@ -8,7 +8,7 @@ Particle particle;
 float particleXPos, particleYPos;
 int finishX, finishY;
 float MOVEMENT_SPEED = 10;
-final static int PARTICLE_HEIGHT_WIDTH = 50;
+final static int PARTICLE_DIAMETER = 50;
 int lastKeyPress = keyCode;
 int levelNum = 0;
 StringList levelNames;
@@ -73,6 +73,14 @@ void draw() {
     particle.update(particleXPos, particleYPos);
     particle.show();
     particle.look(walls);
+    if(pointCircle(finishX, finishY, particle.pos.x, particle.pos.y, PARTICLE_DIAMETER/2)) {
+      isUIVisible = !isUIVisible;
+      try {
+        setupLevelSelect(levelNames);
+      } catch (LevelFormatException e) {
+        System.out.println(e);
+      }
+    }
   }
   else {
     background(0);
@@ -86,7 +94,7 @@ boolean hasCollided() {
   boolean result = false;
   for(Boundary wall : walls) {
     //Use library in CollisionDetection.pde
-    result = lineCircle(wall.wallVector1.x, wall.wallVector1.y, wall.wallVector2.x, wall.wallVector2.y, particle.pos.x, particle.pos.y, PARTICLE_HEIGHT_WIDTH/2);
+    result = lineCircle(wall.wallVector1.x, wall.wallVector1.y, wall.wallVector2.x, wall.wallVector2.y, particle.pos.x, particle.pos.y, PARTICLE_DIAMETER/2);
     if(result){
       return result;
     }
@@ -99,13 +107,13 @@ void keyPressed() {
     if(keyCode == 38 && particleYPos > 0) {
       particleYPos -= MOVEMENT_SPEED;
     }
-    else if(keyCode == 40 && particleYPos < height - PARTICLE_HEIGHT_WIDTH) {
+    else if(keyCode == 40 && particleYPos < height - PARTICLE_DIAMETER/2) {
       particleYPos += MOVEMENT_SPEED;
     }
     else if(keyCode == 37 && particleXPos > 0) {
       particleXPos -= MOVEMENT_SPEED;
     }
-    else if(keyCode == 39 && particleXPos < width - PARTICLE_HEIGHT_WIDTH) {
+    else if(keyCode == 39 && particleXPos < width - PARTICLE_DIAMETER/2) {
       particleXPos += MOVEMENT_SPEED;
     }
     //Debugging
