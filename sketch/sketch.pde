@@ -140,13 +140,6 @@ void keyPressed() {
     else if(keyCode == 39 && particleXPos < width - PARTICLE_DIAMETER/2) {
       particleXPos += MOVEMENT_SPEED;
     }
-    //Debugging
-    else {
-      
-      //left up right down
-      // 37  38 39    40
-    }
   }
   lastKeyPress = keyCode == 37 || keyCode == 38 || keyCode == 39 || keyCode == 40 ? keyCode : lastKeyPress;
-  //System.out.println("No way jose " + key + " " + keyCode + " " + starting_x + " " + starting_y + " Has collided: " + hasCollided(currentPoints, TOTAL_WIDTH, TOTAL_HEIGHT));
 }
