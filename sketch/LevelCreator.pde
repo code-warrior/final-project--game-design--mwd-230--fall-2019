@@ -1,3 +1,7 @@
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptEngine;
+import javax.script.ScriptException;
+
 void setInitialPosition(JSONObject levelData) throws LevelFormatException
 {
     String temp1, temp2, temp3, temp4;
@@ -55,8 +59,25 @@ int parseIntHelper(String input) throws LevelFormatException
         else if(input.equals("width")) {
             return width;
         }
+        else if(input.equals("centerH")) {
+            return height/2;
+        }
+        else if(input.equals("centerW")) {
+            return width/2;
+        }
         else {
-            throw new LevelFormatException("Invalid value for JSON input. Must either be a number or \"height\" or \"width\"!");
+            try{
+                //Parse math experssions in levels
+                ScriptEngineManager mgr = new ScriptEngineManager();
+                ScriptEngine engine = mgr.getEngineByName("JavaScript");
+                input = input.replaceAll("height", height + "");
+                input = input.replaceAll("width", width + "");
+                return (int)engine.eval(input);
+            } catch(ScriptException e1) {
+                System.out.println(e1);
+                return 0;
+            }
+            //throw new LevelFormatException("Invalid value for JSON input. Must either be a number or \"height\" or \"width\"!");
         }
     }
 }
