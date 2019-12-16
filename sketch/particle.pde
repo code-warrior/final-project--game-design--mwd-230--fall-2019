@@ -45,6 +45,30 @@ class Particle {
     }
   }
 
+  void look(Boundary[] walls) {
+    for (int i = 0; i < this.rays.length; i++) {
+      Ray ray = this.rays[i];
+      PVector closest = null;
+      float record = 500000000;
+      for (Boundary wall : walls) {
+        PVector intersectionPoint = ray.cast(wall);
+        if (intersectionPoint != null) {
+          float distance = PVector.dist(this.pos, intersectionPoint);
+          if (distance < record) {
+            record = distance;
+            closest = intersectionPoint;
+          }
+        }
+      }
+      if (closest != null) {
+        // colorMode(HSB);
+        // stroke((i + frameCount * 2) % 360, 255, 255, 50);
+        stroke(255, 100);
+        line(this.pos.x, this.pos.y, closest.x, closest.y);
+      }
+    }
+  }
+
   void show() {
     fill(255);
     ellipseMode(CENTER);

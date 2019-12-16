@@ -4,6 +4,7 @@ import controlP5.*;
 
 ControlP5 cp5;
 ArrayList<Boundary> walls;
+Boundary[] wallsRay = new Boundary[5+4];
 Particle particle;
 float particleXPos, particleYPos;
 int finishX, finishY;
@@ -14,6 +15,8 @@ int levelNum = 0;
 StringList levelNames;
 boolean isUIVisible = true;
 String levelNameNice;
+float xoff = 0;
+float yoff = 10000;
 
 void setup() {
   size(1920, 1080);
@@ -21,15 +24,23 @@ void setup() {
 
   levelNames = listLevels();
   //System.out.println("levels/" + levelNames.get(levelNum));
+  for (int i = 0; i < wallsRay.length; i++) {
+    float x1 = random(width);
+    float x2 = random(width);
+    float y1 = random(height);
+    float y2 = random(height);
+    wallsRay[i] = new Boundary(x1, y1, x2, y2, 255);
+  }
+
   walls = new ArrayList();
   //Top left corner to top right
-  walls.add(new Boundary(particleXPos-199, particleYPos-199, particleXPos+201, particleYPos-199, 0));
+  //walls.add(new Boundary(particleXPos-199, particleYPos-199, particleXPos+201, particleYPos-199, 0));
   //top left corner to bottom left
-  walls.add(new Boundary(particleXPos-199, particleYPos-199, particleXPos-199, particleYPos+201, 0));
+  //walls.add(new Boundary(particleXPos-199, particleYPos-199, particleXPos-199, particleYPos+201, 0));
   //top right corner to bottom right corner
-  walls.add(new Boundary(particleXPos+201, particleYPos-199, particleXPos+201, particleYPos+201, 0));
+  //walls.add(new Boundary(particleXPos+201, particleYPos-199, particleXPos+201, particleYPos+201, 0));
   //bottom left corner to bottom right corner
-  walls.add(new Boundary(particleXPos+201, particleYPos+201, particleXPos-199, particleYPos+201, 0));
+  //walls.add(new Boundary(particleXPos+201, particleYPos+201, particleXPos-199, particleYPos+201, 0));
   //Start Player in middle
   //particleXPos = width/2;
   //particleYPos = height/2;
@@ -84,6 +95,19 @@ void draw() {
   }
   else {
     background(0);
+    wallsRay[wallsRay.length-4] = (new Boundary(0, 0, width, 0, 0));
+    wallsRay[wallsRay.length-3] = (new Boundary(width, 0, width, height, 0));
+    wallsRay[wallsRay.length-2] = (new Boundary(width, height, 0, height, 0));
+    wallsRay[wallsRay.length-1] = (new Boundary(0, height, 0, 0, 0));
+    for (Boundary wall : wallsRay) {
+      wall.show();
+    }
+    particle.update(noise(xoff) * width, noise(yoff) * height);
+    particle.show();
+    particle.look(wallsRay);
+
+    xoff += 0.01;
+    yoff += 0.01;
     textSize(128);
     fill(255);
     text("Into The Darkness", width/2-128*4.4, 150);
