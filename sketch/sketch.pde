@@ -84,6 +84,9 @@ void draw() {
     particle.update(particleXPos, particleYPos);
     particle.show();
     particle.look(walls);
+    Particle end = new Particle();
+    end.update(finishX, finishY);
+    end.show();
     if(pointCircle(finishX, finishY, particle.pos.x, particle.pos.y, PARTICLE_DIAMETER/2)) {
       isUIVisible = !isUIVisible;
       try {
