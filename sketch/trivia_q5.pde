@@ -37,5 +37,5 @@ void drawWinQ5(){
   text("LEVEL 3: Q1", 535,(DISPLAY_TYPE_SIZE + 15));
   text("CORRECT", 540,(DISPLAY_TYPE_SIZE + 60));
   text("The answer was Q. 1964", 470,(DISPLAY_TYPE_SIZE + 130));
-  text("Press (6) for FINAL QUESTION", 435,(DISPLAY_TYPE_SIZE + 200));
+  text("Press (DOWN ARROW KEY) for FINAL QUESTION", 340,(DISPLAY_TYPE_SIZE + 200));
 }

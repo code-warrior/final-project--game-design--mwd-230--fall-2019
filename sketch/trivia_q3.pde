@@ -37,5 +37,5 @@ void drawWinQ3(){
   text("LEVEL 2: Q1", 540,(DISPLAY_TYPE_SIZE + 15));
   text("CORRECT", 547,(DISPLAY_TYPE_SIZE + 60));
   text("The answer was I. 0 --> Roosters cannot lay eggs", 350,(DISPLAY_TYPE_SIZE + 140));
-  text("Press (4) for NEXT QUESTION", 450,(DISPLAY_TYPE_SIZE + 220));
+  text("Press (UP ARROW KEY) for NEXT QUESTION", 380,(DISPLAY_TYPE_SIZE + 220));
 }

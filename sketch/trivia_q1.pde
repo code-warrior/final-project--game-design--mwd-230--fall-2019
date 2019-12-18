@@ -34,6 +34,6 @@ void drawWinQ1(){
   fill(255);
   text("LEVEL 1: Q1", 540,(DISPLAY_TYPE_SIZE + 15));
   text("CORRECT", 540,(DISPLAY_TYPE_SIZE + 60));
-  text("The answer was D. No One --> The doctors were Robert's sisters.", 300,(DISPLAY_TYPE_SIZE + 140));
-  text("Press (2) for NEXT QUESTION", 450,(DISPLAY_TYPE_SIZE + 220));
+  text("The answer was D. No One --> The doctors were Robert's sisters.", 290,(DISPLAY_TYPE_SIZE + 140));
+  text("Press (RIGHT ARROW KEY) for NEXT QUESTION", 370,(DISPLAY_TYPE_SIZE + 220));
 }

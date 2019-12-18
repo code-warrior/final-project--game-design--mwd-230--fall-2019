@@ -38,9 +38,9 @@ void drawWinQ4(){
   fill(255);
   text("LEVEL 2: Q2", 540,(DISPLAY_TYPE_SIZE + 15));
   text("CORRECT", 547,(DISPLAY_TYPE_SIZE + 60));
-  text("The answer was B. White --> He can walk one-mile due south, then one-mile",250,(DISPLAY_TYPE_SIZE + 130));
+  text("The answer was L. White --> He can walk one-mile due south, then one-mile",250,(DISPLAY_TYPE_SIZE + 130));
   text("due east and finally one-mile due north where he finds his cabin again.", 250,(DISPLAY_TYPE_SIZE + 160));
   text("This means that his cabin can only be at the North Pole, and for that", 250,(DISPLAY_TYPE_SIZE + 190));
   text("reason the bear will be white.", 250,(DISPLAY_TYPE_SIZE + 220));
-  text("Press (5) for LEVEL 3", 490,(DISPLAY_TYPE_SIZE + 280));
+  text("Press (3) for LEVEL 3", 490,(DISPLAY_TYPE_SIZE + 280));
 }

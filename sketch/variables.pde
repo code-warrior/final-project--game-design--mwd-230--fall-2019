@@ -1,4 +1,6 @@
-public final int ENTER_KEY = 39;
+public final int RIGHT_KEY = 39;
+public final int DOWN_KEY = 40;
+public final int UP_KEY = 38;
 public final int SPACE_KEY = 32;
 public final int A_KEY = 65;
 public final int B_KEY = 66;

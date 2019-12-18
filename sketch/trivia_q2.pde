@@ -38,5 +38,5 @@ void drawWinQ2(){
   text("The answer was G. His son --> We can replace my father's son by myself", 250,(DISPLAY_TYPE_SIZE + 140));
   text("since he is the only child. Now remains: This mans' father is himself,", 250,(DISPLAY_TYPE_SIZE + 180));
   text("so this man is his son.", 250,(DISPLAY_TYPE_SIZE + 220));
-  text("Press (3) for LEVEL 2", 450,(DISPLAY_TYPE_SIZE + 280));
+  text("Press (2) for LEVEL 2", 480,(DISPLAY_TYPE_SIZE + 280));
 }

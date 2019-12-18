@@ -11,5 +11,5 @@ void drawLevelSelection(){
   text("A riddle will pop up on the screen in a multiple choice style. Each level is a different", 150,(DISPLAY_TYPE_SIZE + 260)); 
   text("category and varies in difficulty. Good luck!", 150,(DISPLAY_TYPE_SIZE + 290));
   text("Level Selection", 490,(DISPLAY_TYPE_SIZE + 400));
-  text("Press (1) for Level 1        Press (3) for Level 2        Press (5) for Level 3", 230,(DISPLAY_TYPE_SIZE + 500));
+  text("Press (1) for Level 1        Press (2) for Level 2        Press (3) for Level 3", 230,(DISPLAY_TYPE_SIZE + 500));
 }

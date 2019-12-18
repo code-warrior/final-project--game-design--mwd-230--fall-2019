@@ -9,12 +9,10 @@ void draw(){
   noStroke();
   rect(60,55,1080,600);
 
-// ENTER Key to start game
-  if(keyCode == SPACE_KEY){
      drawWelcome();
-  }
+
 // space key to get to instruction and levels page
-  if(keyCode == ENTER_KEY){
+  if(keyCode == SPACE_KEY){
     drawLevelSelection();
   }
   
@@ -33,35 +31,35 @@ void draw(){
   }
   
   //select Level 1 Question 2
-    if(keyCode == TWO_KEY || keyCode == E_KEY || keyCode == F_KEY || keyCode == G_KEY ){
+  if(keyCode == RIGHT_KEY || keyCode == E_KEY || keyCode == F_KEY || keyCode == G_KEY ){
       drawTrivia_Q2();
       
-      if(keyCode == G_KEY){
+     if(keyCode == G_KEY){
          clear();
          drawWinQ2();
-      }
-      if(keyCode == E_KEY || keyCode == F_KEY){
+     }
+     if(keyCode == E_KEY || keyCode == F_KEY){
          clear();
          drawLoseQ2();
       }
-    }
+   }
     
    //select Level 2 Question 1
-    if(keyCode == THREE_KEY || keyCode == H_KEY || keyCode == I_KEY || keyCode == J_KEY ){
+  if(keyCode == TWO_KEY || keyCode == H_KEY || keyCode == I_KEY || keyCode == J_KEY ){
       drawTrivia_Q3();
-      
-      if(keyCode == I_KEY){
+  
+     if(keyCode == I_KEY){
          clear();
          drawWinQ3();
-      }
-      if(keyCode == H_KEY || keyCode == J_KEY){
+     }
+     if(keyCode == H_KEY || keyCode == J_KEY){
          clear();
          drawLoseQ3();
-      }
-    }
+     }
+   }
     
-       //select Level 2 Question 2
-    if(keyCode == FOUR_KEY || keyCode == K_KEY || keyCode == L_KEY || keyCode == M_KEY || keyCode == N_KEY){
+    //select Level 2 Question 2
+    if(keyCode == UP_KEY || keyCode == K_KEY || keyCode == L_KEY || keyCode == M_KEY || keyCode == N_KEY){
       drawTrivia_Q4();
       
       if(keyCode == L_KEY){
@@ -75,7 +73,7 @@ void draw(){
     }
     
     //select Level 3 Question 1
-    if(keyCode == FIVE_KEY || keyCode == O_KEY || keyCode == P_KEY || keyCode == Q_KEY ){
+    if(keyCode == THREE_KEY || keyCode == O_KEY || keyCode == P_KEY || keyCode == Q_KEY ){
       drawTrivia_Q5();
       
       if(keyCode == Q_KEY){
@@ -89,7 +87,7 @@ void draw(){
     }
     
     //select Level 3 Question 2
-    if(keyCode == SIX_KEY || keyCode == R_KEY || keyCode == S_KEY || keyCode == T_KEY ){
+    if(keyCode == DOWN_KEY || keyCode == R_KEY || keyCode == S_KEY || keyCode == T_KEY ){
       drawTrivia_Q6();
       
       if(keyCode == R_KEY){
@@ -101,6 +99,4 @@ void draw(){
          drawLoseQ6();
       }
     }
-    
-   
 }

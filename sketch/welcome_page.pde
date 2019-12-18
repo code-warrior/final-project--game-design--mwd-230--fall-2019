@@ -6,6 +6,6 @@ void drawWelcome(){
   text("WELCOME", 540,(DISPLAY_TYPE_SIZE + 200));
   text("TO", 575,(DISPLAY_TYPE_SIZE + 260));
   text("RIDDLE TRIVIA", 510,(DISPLAY_TYPE_SIZE + 320));
-  text("Press (RIGHT ARROW) to begin", 435,(DISPLAY_TYPE_SIZE + 550));
+  text("Press (SPACEBAR) to begin", 460,(DISPLAY_TYPE_SIZE + 550));
 
 }
