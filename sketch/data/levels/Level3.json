@@ -1,0 +1,20 @@
+{
+    "name": "Level 3",
+    "startingx": "centerW",
+    "startingy": "centerH",
+    "finishx": "width/2",
+    "finishy": "0",
+    "walls": {
+        "top": ["width/2-100","height/2-100","width/2+100","height/2-100"],
+        "left": ["width/2-100","height/2-100","width/2-100","height/2+100"],
+        "right": ["width/2+100","height/2-100","width/2+100","height/2+200"],
+        "1": ["200","height/2+100", "width/2-100", "height/2+100"],
+        "2": ["0", "height/2+200","width/2+100","height/2+200"],
+        "3": ["0","height/2-100","width/2-300","height/2-100"],
+        "4": ["150","height/2-250","width-150","height/2-250"],
+        "5": ["width-150","height/2-250","width-150","0"],
+        "6": ["150","height/2-400","width/2-100","height/2-400"],
+        "7": ["width/2-100","height/2-400","width/2-100","0"],
+        "8": ["width/2+50","height/2-100","width/2+50","0"]
+    }
+}
