@@ -1,5 +1,4 @@
-*
-
 !.gitignore
 !*.pde
 !img/
+!data/

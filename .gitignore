@@ -1,7 +1,1 @@
-*
-
-!.gitignore
-!README.md
-!sketch/
-!sketch/img/
-!THE-ONE-SHEET.md
+.DS_Store
