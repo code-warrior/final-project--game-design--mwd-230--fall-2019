@@ -1,3 +1,4 @@
+// page draws instruction set and level selection
 void drawLevelSelection(){
   fill(#0099cc);
   noStroke();

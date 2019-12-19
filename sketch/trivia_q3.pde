@@ -16,6 +16,7 @@ void drawTrivia_Q3(){
  
 }
 
+//draws response to players incorrect answer
 void drawLoseQ3() {
   background(#bfbfbf);
   fill(#ff0000);
@@ -27,6 +28,8 @@ void drawLoseQ3() {
   text("INCORRECT", 540, (DISPLAY_TYPE_SIZE + 60));
   text("Press (2) to TRY AGAIN", 482, (DISPLAY_TYPE_SIZE + 160));
 }
+
+//draws response to players correct answer
 void drawWinQ3(){
   background(#bfbfbf);
   fill(#47d147);

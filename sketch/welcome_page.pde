@@ -1,3 +1,4 @@
+//draws welcome page
 void drawWelcome(){
   fill(#0099cc);
   rect(60,55,1080,600);
@@ -7,5 +8,4 @@ void drawWelcome(){
   text("TO", 575,(DISPLAY_TYPE_SIZE + 260));
   text("RIDDLE TRIVIA", 510,(DISPLAY_TYPE_SIZE + 320));
   text("Press (SPACEBAR) to begin", 460,(DISPLAY_TYPE_SIZE + 550));
-
 }

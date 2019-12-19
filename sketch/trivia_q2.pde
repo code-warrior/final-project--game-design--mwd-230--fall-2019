@@ -15,6 +15,7 @@ void drawTrivia_Q2(){
   text("PICK A LETTER ... CHOOSE WISELY", 400,(DISPLAY_TYPE_SIZE + 450));
 }
 
+//draws response to players incorrect answer
 void drawLoseQ2() {
   background(#bfbfbf);
   fill(#ff0000);
@@ -26,6 +27,8 @@ void drawLoseQ2() {
   text("INCORRECT", 540, (DISPLAY_TYPE_SIZE + 60));
   text("Press (RIGHT ARROW KEY) to TRY AGAIN", 380, (DISPLAY_TYPE_SIZE + 160));
 }
+
+//draws response to players correct answer
 void drawWinQ2(){
   background(#bfbfbf);
   fill(#47d147);

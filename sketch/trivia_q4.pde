@@ -16,8 +16,9 @@ void drawTrivia_Q4(){
   text("M. Grey", 520,(DISPLAY_TYPE_SIZE + 450));
   text("N. Brown", 520,(DISPLAY_TYPE_SIZE + 500));
   text("PICK A LETTER ... CHOOSE WISELY", 400,(DISPLAY_TYPE_SIZE + 560));
-  
 }
+
+//draws response to players incorrect answer
 void drawLoseQ4() {
   background(#bfbfbf);
   fill(#ff0000);
@@ -29,6 +30,8 @@ void drawLoseQ4() {
   text("INCORRECT", 540, (DISPLAY_TYPE_SIZE + 60));
   text("Press (UP ARROW KEY) to TRY AGAIN", 380, (DISPLAY_TYPE_SIZE + 160));
 }
+
+//draws response to players correct answer
 void drawWinQ4(){
   background(#bfbfbf);
   fill(#47d147);
