@@ -7,7 +7,7 @@
 // https://editor.p5js.org/codingtrain/sketches/Nqsq3DFv-
 
 class Boundary {
-  //
+  //Simple boundary. (It's really just a line, but we use vectors so we can do math on them in the Ray class)
   PVector wallVector1, wallVector2;
   color c;
   Boundary(float x1, float y1, float x2, float  y2, color c) {

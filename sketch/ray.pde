@@ -7,18 +7,21 @@
 // https://editor.p5js.org/codingtrain/sketches/Nqsq3DFv-
 
 class Ray {
+  //Position and DIrection
   PVector pos, dir;
   Ray(PVector _pos, float angle) {
     this.pos = _pos;
     this.dir = PVector.fromAngle(angle);
   }
 
+  //Draw a line using the normal vector
   void lookAt(float x, float y) {
     this.dir.x = x - this.pos.x;
     this.dir.y = y - this.pos.y;
     this.dir.normalize();
   }
 
+  //Show the line of the vector
   void show() {
     stroke(255);
     push();
@@ -27,6 +30,7 @@ class Ray {
     pop();
   }
 
+  //Find the point at which the ray intersects with the wall
   PVector cast(Boundary wall) {
     float x1 = wall.wallVector1.x;
     float y1 = wall.wallVector1.y;

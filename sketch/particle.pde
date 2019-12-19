@@ -7,20 +7,25 @@
 // https://editor.p5js.org/codingtrain/sketches/Nqsq3DFv-
 
 class Particle {
+  //position
   PVector pos;
+  //Collection of rays
   Ray[] rays;
   Particle() {
     this.pos = new PVector(width / 2, height / 2);
     this.rays = new Ray[180];
+    //Generate rays
     for (int angle = 0; angle < this.rays.length; angle += 1) {
       this.rays[angle] = new Ray(this.pos, radians(2*angle));
     }
   }
 
+  //Update particles position
   void update(float x, float y) {
     this.pos.set(x, y);
   }
 
+  //Wrapper for the rays to cast out at the walls. Also will cast at the closest wall instead of any
   void look(ArrayList<Boundary> walls) {
     for (int i = 0; i < this.rays.length; i++) {
       Ray ray = this.rays[i];
@@ -45,6 +50,7 @@ class Particle {
     }
   }
 
+  //Same as above except with an array
   void look(Boundary[] walls) {
     for (int i = 0; i < this.rays.length; i++) {
       Ray ray = this.rays[i];
@@ -69,6 +75,7 @@ class Particle {
     }
   }
 
+  //Show the particle and the rays
   void show() {
     fill(255);
     ellipseMode(CENTER);

@@ -2,6 +2,7 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
+//This file creates the level based upon user selection
 void setInitialPosition(JSONObject levelData) throws LevelFormatException
 {
     String temp1, temp2, temp3, temp4;
@@ -29,6 +30,7 @@ void drawLevel(JSONObject levelData) throws LevelFormatException
     } catch (RuntimeException e) {
         throw new LevelFormatException("Could not find walls!");
     }
+    //Use an iterator to map out the walls
     while(wallsKeys.hasNext()) {
         String wallRay = (String) wallsKeys.next();
         JSONArray wall = wallsJSON.getJSONArray(wallRay);
@@ -48,6 +50,7 @@ void drawLevel(JSONObject levelData) throws LevelFormatException
     }
 }
 
+//helper method to parse the ints in the JSON file
 int parseIntHelper(String input) throws LevelFormatException
 {
     try {
