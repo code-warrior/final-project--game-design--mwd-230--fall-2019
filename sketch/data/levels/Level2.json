@@ -1,0 +1,20 @@
+{
+    "name": "Level 2",
+    "startingx": "0",
+    "startingy": "540",
+    "finishx": "width",
+    "finishy": "540",
+    "walls": {
+        "top": ["0","height/2+100","width/2","height/2+100"],
+        "bottom": ["0","height/2-100","width/2","height/2-100"],
+        "wall": ["width/2+200","height/2+100","width/2+200","height/2-100"],
+        "left": ["width/2","height","width/2","height/2+100"],
+        "right": ["width/2","0","width/2","height/2-100"],
+        "walltop": ["width/2","height/2-250","width","height/2-250"],
+        "walltopbottom": ["width/2+200","height/2-100","width","height/2-100"],
+        "wallbottom": ["width/2","height/2+250","width","height/2+250"],
+        "wallbottomtop": ["width/2+200","height/2+100","width-150","height/2+100"],
+        "finishleft": ["width-150","height/2+100","width-150","height/2-50"],
+        "finishtop": ["width-150","height/2-50","width","height/2-50"]
+    }
+}
