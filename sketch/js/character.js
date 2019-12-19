@@ -24,7 +24,7 @@ class Player {
 
     // Gravity, lift and velocity
     this.gravity = 7;
-    this.lift = -350;
+    this.lift = -315;
     this.velocity = 0;
 
     //Score
@@ -63,7 +63,6 @@ class Player {
       this.velocity = 0;
       this.spaceClickedTwice = false;
     }
-    this.score++;
   }
 
   //sets speed to animation
@@ -75,7 +74,6 @@ class Player {
   hits(enemies) {
     if (this.x > enemies.x) {
       if (this.y + this.h > enemies.y + 50) {
-        console.log("Hit");
         return true;
       }
     }

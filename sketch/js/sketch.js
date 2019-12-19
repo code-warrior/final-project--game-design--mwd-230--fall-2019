@@ -107,6 +107,8 @@ function setup() {
   buttonLevel3.position(1040, 115);
   buttonLevel3.mousePressed(Level3);
 
+  score = select("#score");
+
   //Loop through Sprite
   framesPlayer = playerData.frames;
   framesJump = jumpData.frames;
@@ -134,7 +136,6 @@ function setup() {
   // }
 
   player = new Player(1);
-  h1 = createElement("h1", "Score:" + player.score);
 }
 
 function draw() {
@@ -144,6 +145,7 @@ function draw() {
       enemies[i].update();
       if (enemies[i].offscreen()) {
         enemies.splice(i, 1);
+        player.score++;
       }
     }
 
