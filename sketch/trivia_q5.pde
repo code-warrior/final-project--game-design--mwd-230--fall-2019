@@ -25,7 +25,7 @@ void drawLoseQ5() {
   fill(255);
   text("LEVEL 3: Q1", 540,(DISPLAY_TYPE_SIZE + 15));
   text("INCORRECT", 540, (DISPLAY_TYPE_SIZE + 60));
-  text("Press (5) to TRY AGAIN", 482, (DISPLAY_TYPE_SIZE + 160));
+  text("Press (3) to TRY AGAIN", 482, (DISPLAY_TYPE_SIZE + 160));
 }
 void drawWinQ5(){
   background(#bfbfbf);

@@ -27,7 +27,7 @@ void drawLoseQ4() {
   fill(255);
   text("LEVEL 2: Q2", 540,(DISPLAY_TYPE_SIZE + 15));
   text("INCORRECT", 540, (DISPLAY_TYPE_SIZE + 60));
-  text("Press (4) to TRY AGAIN", 482, (DISPLAY_TYPE_SIZE + 160));
+  text("Press (UP ARROW KEY) to TRY AGAIN", 380, (DISPLAY_TYPE_SIZE + 160));
 }
 void drawWinQ4(){
   background(#bfbfbf);
